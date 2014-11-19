@@ -7,7 +7,6 @@ My problem was that I wanted to be able to publish files from GNU Emacs and coul
 
 This will be a work in progress and I am not responisble for any bad things that might happen to your files.
 
-=================
 
 To start you need to install FUSE and sshfs.
 On Mac OS X you can find it here: http://osxfuse.github.io
