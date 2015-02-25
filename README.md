@@ -44,7 +44,7 @@ Host testserver
 ```
 Now when you type ssh testserver you should magically end up there, if you do everything works so far.
 
-I use a small script to mount my server filesystem on a folder on my local machine, that way I can copy files from my SVN repository to there to publish them. I will inlcude this script. Further down the road I will try to build this into my Emacs file.
+I use a small script to mount my server filesystem on a folder on my local machine, that way I can copy files from my SVN repository to there to publish them. This oneliner script is included as *pub_mount.sh*. Further down the road I will try to build this into my Emacs file.
 
 Put the publish.el file into your lisp search path, for example *~/.emacs.d/lisp/*
 
