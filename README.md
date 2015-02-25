@@ -35,7 +35,7 @@ Now you should be able to ssh to that server without typing a password.
 
 To simplify the connection I usually do the following:
 
-Edit or create the file **~/.ssh/config** on your work machine. Add the following, change User and Hostname to your server:
+Edit or create the file **~/.ssh/config** on your work machine. Add the following, change User, Port and Hostname to your server:
 ```
 Host testserver
     HostName address.to.magic.testserver.com
