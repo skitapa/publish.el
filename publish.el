@@ -24,6 +24,6 @@ that directory"
     )
   )
 
-(provide 'file_play)
+(provide 'publish)
 ;;; publish.el ends here
 
