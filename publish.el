@@ -4,11 +4,10 @@
 ;; version 0.000001
 ;; keywords: publish, sshfs
 ;; URL: https://github.com/skitapa/publish.el
-;;; Code:
 ;;; Commentary:
 ;; This package helps copy a buffer to a designated place somewhere. This can be used
 ;; to publish files if that folder is mounted with sshfs.
-
+;;; Code:
 
 
 (defun publish ()
@@ -16,14 +15,15 @@
 It will blatantly overwrite files with same filename in
 that directory"
   (interactive)
-  (setq publish_dir "/Users/johndoe/testserver");; Set your publishing dir here without trailing slash
-  (if (file-exists-p "/Users/johndoe/testserver/private/index.php");; checks if mounted, place file there or use available
-      (progn (progn (mark-whole-buffer)
-       (write-region nil (point-max) (concat publish_dir (substring (buffer-file-name) 29)))) (deactivate-mark))
-    (message "The directory is not mounted!")
-    )
-  )
+  (setq publish_dir "/Users/johndoe/testserver") ;; Set your publishing dir here without trailing slash
+  (if (file-exists-p "/Users/johndoe/testserver/private/index.php") ;; checks if mounted, place file there or use available
+      (progn
+	(progn
+	  (mark-whole-buffer)
+	  (write-region nil (point-max)
+			(concat publish_dir (substring (buffer-file-name) 29))))
+	(deactivate-mark))
+    (message "The directory is not mounted!")))
 
 (provide 'publish)
 ;;; publish.el ends here
-
