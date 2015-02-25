@@ -16,7 +16,7 @@ Using
 =================
 
 To use this, first setup so you have sshfs through fuse.
-On a debian base distro this would be something like:
+On a debian based distro this would be something like:
 
 apt-get install sshfs
 
