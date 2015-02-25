@@ -1,7 +1,7 @@
 Publish.el
 ================
 
-This is a description and a an GNU Emacs file to automate the publishing of some file to a server.
+This is a description and a an GNU Emacs file to automate the publishing of some file to a webserver running on a *nix operating system via ssh.
 
 My problem was that I wanted to be able to publish files from GNU Emacs and could not find a package for it.
 
@@ -35,23 +35,34 @@ Now you should be able to ssh to that server without typing a password.
 
 To simplify the connection I usually do the following:
 
-Edit or create the file *~/.ssh/config* on your work machine. Add the following, change User and Hostname:
+Edit or create the file *~/.ssh/config* on your work machine. Add the following, change User and Hostname to your server:
 ```
 Host testserver
     HostName address.to.magic.testserver.com
     Port 22
     User johndoe
-Host prodserver
-     HostName realdeal.server.com
-     Port 1492
-     User dude
-     
 ```
 Now when you type ssh testserver you should magically end up there, if you do everything works so far.
 
 I use a small script to mount my server filesystem on a folder on my local machine, that way I can copy files from my SVN repository to there to publish them. I will inlcude this script. Further down the road I will try to build this into my Emacs file.
 
-When you have mounted your server filesystem, open Emacs. Visit(Load) the publish.el file and change directories to match yours, then go to line *18* after the parenthesis. Press *CTRL-x CTRL-e* to evaluate the definition.
+Put the publish.el file into your lisp search path, for example *~/.emacs.d/lisp/*
+Add the following to your .emacs file
+```
+(require 'publish)
+;; keybinding for publish
+(global-set-key (kbd "C-x p") 'publish)
+```
+Now go into publish.el and change the directory names so they match your own.
+Then there is the tricky part.
 
-Now when you press *M-x* and type *publish* on a buffer it will be copied to your set server directory.
-I recommend you bind the function to some key.
+My SVN work directory lies in *~/php-svn-checkout/*
+and my testserver is mounted under *~/testserver/*
+
+The script however take the full path, In my case */User/jimmy/php-svn-checkout/* and */User/jimmy/testserver/*
+So In my case I want the script to cut off the path at character 29. That takes the whole path up to there away but keeps anything after. Then it adds the */User/jimmy/testserver* so that the file gets saved to the server directory.
+That means you have to replace the number 29 with however many characters you need to loose.
+
+When this is done you can press *M-x* and type *publish* on a buffer it will be copied to your set server directory.
+Or use the shortcut *C-x p*
+
