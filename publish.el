@@ -16,8 +16,8 @@
 It will blatantly overwrite files with same filename in
 that directory"
   (interactive)
-  (setq publish_dir "/Users/jimmy/slask/emacs");; Set your publishing dir here without trailing slash
-  (if (file-exists-p "/Users/jimmy/testserver/private/index.php");; checks if mounted, place file there or use available
+  (setq publish_dir "/Users/johndoe/testserver");; Set your publishing dir here without trailing slash
+  (if (file-exists-p "/Users/johndoe/testserver/private/index.php");; checks if mounted, place file there or use available
       (progn (progn (mark-whole-buffer)
        (write-region nil (point-max) (concat publish_dir (substring (buffer-file-name) 29)))) (deactivate-mark))
     (message "The directory is not mounted!")
