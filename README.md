@@ -17,25 +17,25 @@ Using
 
 To use this, first setup so you have sshfs through fuse.
 On a debian based distro this would be something like:
-
+```
 apt-get install sshfs
-
+```
 Then you can setup passwordless ssh-key login to save keystrokes.
 
 On the machine which you use to login to the server type:
-
+```
 ssh-keygen
-
+```
 Answer questions. See to it that you leave the password empty when it asks for it.
 
-Then copy the contents from ~/.ssh/id_rsa.pub to
-~/.ssh/authorized_keys on the remote server.
+Then copy the contents from *~/.ssh/id_rsa.pub* to
+*~/.ssh/authorized_keys* on the remote server.
 
 Now you should be able to ssh to that server without typing a password.
 
 To simplify the connection I usually do the following:
 
-Edit or create the file ~/.ssh/config on your work machine. Add the following, change User and Hostname:
+Edit or create the file *~/.ssh/config* on your work machine. Add the following, change User and Hostname:
 ```
 Host testserver
     HostName address.to.magic.testserver.com
@@ -51,7 +51,7 @@ Now when you type ssh testserver you should magically end up there, if you do ev
 
 I use a small script to mount my server filesystem on a folder on my local machine, that way I can copy files from my SVN repository to there to publish them. I will inlcude this script. Further down the road I will try to build this into my Emacs file.
 
-When you have mounted your server filesystem, open Emacs. Visit(Load) the publish.el file and change directories to match yours, then go to line 18 after the parenthesis. Press CTRL-x CTRL-e to evaluate the definition.
+When you have mounted your server filesystem, open Emacs. Visit(Load) the publish.el file and change directories to match yours, then go to line *18* after the parenthesis. Press *CTRL-x CTRL-e* to evaluate the definition.
 
-Now when you press M-x and type publish on a buffer it will be copied to your set server directory.
+Now when you press *M-x* and type *publish* on a buffer it will be copied to your set server directory.
 I recommend you bind the function to some key.
