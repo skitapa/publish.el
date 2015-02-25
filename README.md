@@ -28,7 +28,7 @@ ssh-keygen
 
 Answer questions. See to it that you leave the password empty when it asks for it.
 
-then copy the contents from ~/.ssh/id_rsa.pub to
+Then copy the contents from ~/.ssh/id_rsa.pub to
 ~/.ssh/authorized_keys on the remote server.
 
 Now you should be able to ssh to that server without typing a password.
