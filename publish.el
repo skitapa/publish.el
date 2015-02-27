@@ -15,6 +15,7 @@
 It will blatantly overwrite files with same filename in
 that directory"
   (interactive)
+  (setq save_point (point))
   (setq publish_dir "/Users/johndoe/testserver") ;; Set your publishing dir here without trailing slash
   (if (file-exists-p "/Users/johndoe/testserver/private/index.php") ;; checks if mounted, place file there or use available
       (progn
@@ -22,7 +23,9 @@ that directory"
 	  (mark-whole-buffer)
 	  (write-region nil (point-max)
 			(concat publish_dir (substring (buffer-file-name) 29))))
-	(deactivate-mark))
+	(deactivate-mark)
+	(goto-char save-point)
+	)
     (message "The directory is not mounted!")))
 
 (provide 'publish)
