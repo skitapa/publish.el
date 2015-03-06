@@ -1,5 +1,8 @@
 #!/bin/bash
-#place this somewhere in your executable path, say /bin/, /usr/bin, /local/bin or in /home/user/bin and add that bin dir to your path.
-#Change port accordingly to your needs.
+#Small script to mount server directory locally
+#Check that your username, server adress and paths are correct
 
-sshfs -p 22 user@server.com:/var/www/some_web_project/ ~/testserver/
+#Nohup needed for sshfs to work in GNU Emacs
+#Output directed to /dev/null so no nohup.out is created
+
+/usr/bin/nohup /usr/local/bin/sshfs user@webserver.com:/var/www/target/folder /local/mount/folder/testserver/ >/dev/null 2>&1
