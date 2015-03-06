@@ -7,12 +7,12 @@ My problem was that I wanted to be able to publish files from GNU Emacs and coul
 This was time consuming and prone to errors.
 
 So what does this package do?
-Well, when I edit files in my subversion working directory (can of course be any versioning control system), I load them up in buffers in GNU Emacs, I do my work on them and when done I press **Ctrl-x p** and the files are published on my webserver.
+Well, when I edit files in my subversion working directory (or any revision control system), I load them up in buffers in GNU Emacs, I do my work on them and when done I press **Ctrl-x p** and the files are published on my webserver.
 This is done by mounting the servers webcontent folders locally and copying the files there. If the server is not mounted you will be asked if you want to and the package will do it for you if you have set it up properly.
 
 
-This will be a work in progress and I am not responisble for any bad things that might happen to your files.
-**You** are responisble for whatever happens if you use this script. I prefer you first look through the code before using it. That said, it works great for me!
+This will be a work in progress and I am not responsible for any bad things that might happen to your files.
+**You** are responsible for whatever happens if you use this script. I prefer you first look through the code before using it. That said, it works great for me!
 
 The goal is to have some kind of Emacs plugin so that you with one keystroke can publish files to your server.
 
