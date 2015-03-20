@@ -16,7 +16,7 @@ This will be a work in progress and I am not responsible for any bad things that
 
 Previous completed goal - Fix so you could publish with one keystroke
 
-Next goal - Create a setup-script to remove necessary manual edits. Preferadly to setyp passwordless ssh as well. 
+Next goal - Create a setup-script to remove necessary manual edits. Preferadly to setup passwordless ssh as well. 
 
 Please be considerate, I am new to Emacs Lisp.
 
