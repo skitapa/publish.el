@@ -1,20 +1,22 @@
 Publish.el
 ================
 
-This is a description and a an GNU Emacs file to automate the publishing of some file to a webserver running on a *nix operating system via ssh.
+This is a description and a GNU Emacs file to automate the publishing of some file to a webserver running on a *nix operating system via ssh.
 
 My problem was that I wanted to be able to publish files from GNU Emacs and could not find a package for it. I mounted my webserver locally with sshfs and then copied the edited files there and put them in the correct folders.
 This was time consuming and prone to errors.
 
 So what does this package do?
 Well, when I edit files in my subversion working directory (or any revision control system), I load them up in buffers in GNU Emacs, I do my work on them and when done I press **Ctrl-x p** and the files are published on my webserver.
-This is done by mounting the servers webcontent folders locally and copying the files there. If the server is not mounted you will be asked if you want to and the package will do it for you if you have set it up properly.
+This is done by mounting the servers webcontent folders locally and copying the files there. If the server is not mounted you will be asked if you want to and the package will do it for you, if you have set it up properly.
 
 
 This will be a work in progress and I am not responsible for any bad things that might happen to your files.
 **You** are responsible for whatever happens if you use this script. I prefer you first look through the code before using it. That said, it works great for me!
 
-The goal is to have some kind of Emacs plugin so that you with one keystroke can publish files to your server.
+Previous completed goal - Fix so you could publish with one keystroke
+
+Next goal - Create a setup-script to remove necessary manual edits. Preferadly to setyp passwordless ssh as well. 
 
 Please be considerate, I am new to Emacs Lisp.
 
