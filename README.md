@@ -52,7 +52,7 @@ Host testserver
 ```
 Now when you type ssh testserver you should magically end up there, if you do everything works so far.
 
-I have included **pub_mount.sh** a oneliner bash script to automatically mount the webserver from within GNU Emacs. Put this file in one of your bin folders, say /usr/local/bin,/usr/bin,/bin or do as me and create a bin folder in your home directory and and that to your paths.
+I have included **pub_mount.sh** a oneliner bash script to automatically mount the webserver from within GNU Emacs. Put this file in one of your bin folders, say /usr/local/bin,/usr/bin,/bin or do as me and create a bin folder in your home directory and add that to your paths.
 
 Put the publish.el file into your lisp search path, for example **~/.emacs.d/lisp/**
 
